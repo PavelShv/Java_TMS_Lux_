@@ -1,6 +1,6 @@
 public class CountOfProgrammers {
     public static void main(String[] args) {
-        int count = 41; // Пример входного числа
+        int count = 45; // Пример входного числа
 
         printProgrammersCount(count); // Вызов метода для вывода фразы в консоль
     }
