@@ -35,7 +35,7 @@ public class MatrixTranspose8 {
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                transposedMatrix[i][j] = matrix[j][i];
+                transposedMatrix[i][j] = matrix[j][i]; //замена i & j
             }
         }
 
@@ -54,6 +54,7 @@ public class MatrixTranspose8 {
         }
     }
 }
+
 /*
 В этом коде основной класс MatrixTranspose выполняет следующие шаги:
 
