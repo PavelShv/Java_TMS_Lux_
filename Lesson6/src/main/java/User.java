@@ -1,7 +1,7 @@
 public class User {
     private String firstName;
     private String lastName;
-    private int age;
+    public int age;
     private String gender;
 
     // Конструктор класса User
