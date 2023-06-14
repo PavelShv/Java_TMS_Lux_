@@ -36,7 +36,7 @@ public class User {
     }
 
     public static void main(String[] args) {
-        User user = new User("John", "Doe", 30, "Male");
+        User user = new User("Elvis", "Presley", 37, "Male");
         user.printUserInfo(); // Вызов устаревшего метода
         user.increaseAge(5);
         System.out.println("New age: " + user.age);
