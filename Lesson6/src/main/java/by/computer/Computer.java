@@ -1,38 +1,61 @@
 package by.computer;
 
+import java.util.Random;
+
 public class Computer {
     private String processor;
-    private int memory;
+    private int ram;
     private int hardDisk;
-    private int totalCycles;
+    private int cycleResource;
 
-    public Computer(String processor, int memory, int hardDisk, int totalCycles) {
+    public Computer(String processor, int ram, int hardDisk, int cycleResource) {
         this.processor = processor;
-        this.memory = memory;
+        this.ram = ram;
         this.hardDisk = hardDisk;
-        this.totalCycles = totalCycles;
+        this.cycleResource = cycleResource;
     }
 
-    public void turnOn() {
-        System.out.println("Компьютер включен.");
+    public void description() {
+        System.out.println("Processor: " + processor);
+        System.out.println("RAM: " + ram + " GB");
+        System.out.println("Hard Disk: " + hardDisk + " GB");
+        System.out.println("Cycle Resource: " + cycleResource);
     }
 
-    public void turnOff() {
-        System.out.println("Компьютер выключен.");
+    public void on() {
+        if (cycleResource <= 0) {
+            System.out.println("Компьютер сгорел!");
+            return;
+        }
+
+        if (cycleResource < 10) {
+            System.out.println("Внимание! Ресурс компьютера исчерпан!");
+        }
+
+        Random random = new Random();
+        System.out.println("Внимание! Введите 0 или 1:");
+        int userInput = // получение ввода пользователя (можете добавить свой код для получения ввода)
+
+        int randomValue = random.nextInt(2);
+        if (userInput == randomValue) {
+            System.out.println("Компьютер выключается.");
+            cycleResource--;
+        } else {
+            System.out.println("Компьютер сгорел!");
+            cycleResource = 0;
+        }
     }
 
-    public void printComputerSpecs() {
-        System.out.println("Характеристики компьютера:");
-        System.out.println("Процессор: " + processor);
-        System.out.println("Оперативная память: " + memory + " ГБ");
-        System.out.println("Жесткий диск: " + hardDisk + " ГБ");
-        System.out.println("Ресурс полных циклов работы: " + totalCycles);
-    }
+    public void off() {
+        if (cycleResource <= 0) {
+            System.out.println("Компьютер сгорел!");
+            return;
+        }
 
-    public static void main(String[] args) {
-        Computer myComputer = new Computer("Intel Core i7", 8, 500, 1000);
-        myComputer.turnOn();
-        myComputer.printComputerSpecs();
-        myComputer.turnOff();
+        System.out.println("Выключение компьютера.");
+        cycleResource--;
+        if (cycleResource <= 0) {
+            System.out.println("Компьютер сгорел!");
+        }
     }
 }
